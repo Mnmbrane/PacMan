@@ -1,0 +1,27 @@
+[
+	{
+		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\PacMan.Build.cs",
+		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
+		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\PacMan.cpp",
+		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
+		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\PacMan.h",
+		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
+		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\PacManGameModeBase.cpp",
+		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
+		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\PacManGameModeBase.h",
+		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
+		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
+	}
+]

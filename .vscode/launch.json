@@ -1,0 +1,128 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "PacMan (Debug)",
+			"request": "launch",
+			"preLaunchTask": "PacMan Win64 Debug Build",
+			"program": "D:\\UnrealWork\\PacMan\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"args": [
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "PacMan (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "PacMan Win64 DebugGame Build",
+			"program": "D:\\UnrealWork\\PacMan\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"args": [
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "PacMan (Development)",
+			"request": "launch",
+			"preLaunchTask": "PacMan Win64 Development Build",
+			"program": "D:\\UnrealWork\\PacMan\\Binaries\\Win64\\UE4.exe",
+			"args": [
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "PacMan (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "PacMan Win64 Shipping Build",
+			"program": "D:\\UnrealWork\\PacMan\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"args": [
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "PacMan (Test)",
+			"request": "launch",
+			"preLaunchTask": "PacMan Win64 Test Build",
+			"program": "D:\\UnrealWork\\PacMan\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"args": [
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "PacManEditor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "PacManEditor Win64 Debug Build",
+			"program": "D:\\Unreal\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+			"args": [
+				"D:\\UnrealWork\\PacMan\\PacMan.uproject"
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "PacManEditor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "PacManEditor Win64 DebugGame Build",
+			"program": "D:\\Unreal\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
+			"args": [
+				"D:\\UnrealWork\\PacMan\\PacMan.uproject"
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "PacManEditor (Development)",
+			"request": "launch",
+			"preLaunchTask": "PacManEditor Win64 Development Build",
+			"program": "D:\\Unreal\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"args": [
+				"D:\\UnrealWork\\PacMan\\PacMan.uproject"
+			],
+			"cwd": "D:\\Unreal\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "D:\\Unreal\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "clr",
+			"request": "launch",
+			"program": "D:\\Unreal\\UE_4.26\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+			"console": "externalTerminal",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=\"D:\\UnrealWork\\PacMan\\PacMan.uproject\"",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "D:\\Unreal\\UE_4.26"
+		}
+	]
+}

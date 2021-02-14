@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "PacManEditor Editor Win64 Development (PacMan)",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan.json",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
