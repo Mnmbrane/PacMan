@@ -1,5 +1,15 @@
 [
 	{
+		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\GhostModeHandler.cpp",
+		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
+		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\GhostModeHandler.h",
+		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
+		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
+	},
+	{
 		"file": "D:\\\\UnrealWork\\\\PacMan\\\\Source\\\\PacMan\\\\PacMan.Build.cs",
 		"command": "cl.exe @\"D:\\UnrealWork\\PacMan\\.vscode\\compileCommands_PacMan\\PacMan.182.rsp\"",
 		"directory": "D:\\Unreal\\UE_4.26\\Engine\\Source"
