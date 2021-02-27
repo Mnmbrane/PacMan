@@ -26,38 +26,26 @@ void APacManPawn::Tick(float DeltaTime)
 void APacManPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-   PlayerInputComponent->BindAxis("Move Up",    this, &APacManPawn::MoveUp);
-   PlayerInputComponent->BindAxis("Move Down",  this, &APacManPawn::MoveDown);
-   PlayerInputComponent->BindAxis("Move Left",  this, &APacManPawn::MoveLeft);
-   PlayerInputComponent->BindAxis("Move Right", this, &APacManPawn::MoveRight);
+   PlayerInputComponent->BindAxis("Move X",  this, &APacManPawn::MoveX);
+   PlayerInputComponent->BindAxis("Move Y",  this, &APacManPawn::MoveY);
 
 }
 
-void APacManPawn::MoveUp(float value)
+void APacManPawn::MoveX(float value)
 {
    // if value is not 0, then start moving up
-   mMoveUpVector = FVector(value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0, 0);
+   mMoveXVector = FVector(value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0, 0);
 }
 
-void APacManPawn::MoveDown(float value) 
+void APacManPawn::MoveY(float value)
 {
-   mMoveDownVector = FVector(-1.0 * value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0, 0);
-}
-
-void APacManPawn::MoveLeft(float value) 
-{
-   mMoveLeftVector = FVector(0, -1.0 * value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0);
-}
-
-void APacManPawn::MoveRight(float value) 
-{
-   mMoveRightVector = FVector(0, value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0);
+   mMoveYVector = FVector(0, value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0);
 }
 
 void APacManPawn::Move()
 {
    // Add all vectors togehter
-   FVector lMovement = mMoveUpVector + mMoveDownVector + mMoveLeftVector + mMoveRightVector;
+   FVector lMovement = mMoveXVector + mMoveYVector;
    //UE_LOG(LogTemp, Warning, TEXT("Moving (%f, %f, %f)"), mMoveDirection.X, mMoveDirection.Y, mMoveDirection.Z);
 
    AddActorLocalOffset(lMovement, true);
