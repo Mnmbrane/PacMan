@@ -31,20 +31,18 @@ protected:
 
 private:
 
-	void MoveUp();
-	void MoveDown();
-	void MoveLeft();
-	void MoveRight();
-
-	void MoveUpStop();
-	void MoveDownStop();
-	void MoveLeftStop();
-	void MoveRightStop();
+	void MoveUp(float value);
+	void MoveDown(float value);
+	void MoveLeft(float value);
+	void MoveRight(float value);
 
 	void Move();
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float mMoveSpeed;
 
-	FVector mMoveDirection;
+	FVector mMoveUpVector;
+	FVector mMoveDownVector;
+	FVector mMoveLeftVector;
+	FVector mMoveRightVector;
 };

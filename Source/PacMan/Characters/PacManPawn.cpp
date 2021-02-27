@@ -4,7 +4,7 @@
 #include "PacManPawn.h"
 
 APacManPawn::APacManPawn() :
-   mMoveSpeed(500.0f)
+   mMoveSpeed(600.0f)
 {
 
 }
@@ -26,63 +26,39 @@ void APacManPawn::Tick(float DeltaTime)
 void APacManPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-   PlayerInputComponent->BindAction("Move Up",     IE_Pressed, this, &APacManPawn::MoveUp);
-   PlayerInputComponent->BindAction("Move Down",   IE_Pressed, this, &APacManPawn::MoveDown);
-   PlayerInputComponent->BindAction("Move Left",   IE_Pressed, this, &APacManPawn::MoveLeft);
-   PlayerInputComponent->BindAction("Move Right",  IE_Pressed, this, &APacManPawn::MoveRight);
-
-   PlayerInputComponent->BindAction("Move Up",     IE_Released, this, &APacManPawn::MoveUpStop);
-   PlayerInputComponent->BindAction("Move Down",   IE_Released, this, &APacManPawn::MoveDownStop);
-   PlayerInputComponent->BindAction("Move Left",   IE_Released, this, &APacManPawn::MoveLeftStop);
-   PlayerInputComponent->BindAction("Move Right",  IE_Released, this, &APacManPawn::MoveRightStop);
+   PlayerInputComponent->BindAxis("Move Up",    this, &APacManPawn::MoveUp);
+   PlayerInputComponent->BindAxis("Move Down",  this, &APacManPawn::MoveDown);
+   PlayerInputComponent->BindAxis("Move Left",  this, &APacManPawn::MoveLeft);
+   PlayerInputComponent->BindAxis("Move Right", this, &APacManPawn::MoveRight);
 
 }
 
-void APacManPawn::MoveUp()
+void APacManPawn::MoveUp(float value)
 {
-   mMoveDirection.X += (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
+   // if value is not 0, then start moving up
+   mMoveUpVector = FVector(value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0, 0);
 }
 
-void APacManPawn::MoveDown() 
+void APacManPawn::MoveDown(float value) 
 {
-   mMoveDirection.X -= (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
+   mMoveDownVector = FVector(-1.0 * value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0, 0);
 }
 
-void APacManPawn::MoveLeft() 
+void APacManPawn::MoveLeft(float value) 
 {
-   mMoveDirection.Y -= (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
+   mMoveLeftVector = FVector(0, -1.0 * value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0);
 }
 
-void APacManPawn::MoveRight() 
+void APacManPawn::MoveRight(float value) 
 {
-   mMoveDirection.Y += (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
+   mMoveRightVector = FVector(0, value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0);
 }
-
-void APacManPawn::MoveUpStop() 
-{
-   mMoveDirection.X -= (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
-}
-
-void APacManPawn::MoveDownStop() 
-{
-   mMoveDirection.X += (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
-}
-
-void APacManPawn::MoveLeftStop() 
-{
-   mMoveDirection.Y += (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
-}
-
-void APacManPawn::MoveRightStop() 
-{
-   mMoveDirection.Y -= (mMoveSpeed * GetWorld()->DeltaTimeSeconds);
-}
-
-
 
 void APacManPawn::Move()
 {
-   
+   // Add all vectors togehter
+   FVector lMovement = mMoveUpVector + mMoveDownVector + mMoveLeftVector + mMoveRightVector;
    //UE_LOG(LogTemp, Warning, TEXT("Moving (%f, %f, %f)"), mMoveDirection.X, mMoveDirection.Y, mMoveDirection.Z);
-   AddActorLocalOffset(mMoveDirection, true);
+
+   AddActorLocalOffset(lMovement, true);
 }
