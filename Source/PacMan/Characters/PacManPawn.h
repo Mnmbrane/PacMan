@@ -39,6 +39,6 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float mMoveSpeed;
 
-	float mXVectorVal;
-	float mYVectorVal;
+	float mXDeltaVal;
+	float mYDeltaVal;
 };

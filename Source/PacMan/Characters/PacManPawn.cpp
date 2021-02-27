@@ -34,28 +34,28 @@ void APacManPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 void APacManPawn::MoveX(float value)
 {
    // Only calculate Vector if there was a change
-   if( (mXVectorVal == 0.0f && value != 0.0f) || 
-       (mXVectorVal != 0.0f && value == 0.0f) )
+   if( (mXDeltaVal == 0.0f && value != 0.0f) || 
+       (mXDeltaVal != 0.0f && value == 0.0f) )
    {
-      mXVectorVal = value * mMoveSpeed * GetWorld()->DeltaTimeSeconds;
+      mXDeltaVal = value * mMoveSpeed * GetWorld()->DeltaTimeSeconds;
    }
 }
 
 void APacManPawn::MoveY(float value)
 {
    // Only calculate Vector if there was a change
-   if( (mYVectorVal == 0.0f && value != 0.0f) || 
-       (mYVectorVal != 0.0f && value == 0.0f) )
+   if( (mYDeltaVal == 0.0f && value != 0.0f) || 
+       (mYDeltaVal != 0.0f && value == 0.0f) )
    {
-      mYVectorVal = value * mMoveSpeed * GetWorld()->DeltaTimeSeconds;
+      mYDeltaVal = value * mMoveSpeed * GetWorld()->DeltaTimeSeconds;
    }
 }
 
 void APacManPawn::Move()
 {
    // Get movement vector
-   FVector lMovement = FVector(mXVectorVal, mYVectorVal, 0);
+   FVector lMovementVector = FVector(mXDeltaVal, mYDeltaVal, 0);
    //UE_LOG(LogTemp, Warning, TEXT("Moving (%f, %f, %f)"), mMoveDirection.X, mMoveDirection.Y, mMoveDirection.Z);
 
-   AddActorLocalOffset(lMovement, true);
+   AddActorLocalOffset(lMovementVector, true);
 }
