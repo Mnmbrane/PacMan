@@ -53,7 +53,7 @@ void APacManPawn::MoveY(float value)
 
 void APacManPawn::Move()
 {
-   // Add all vectors togehter
+   // Get movement vector
    FVector lMovement = FVector(mXVectorVal, mYVectorVal, 0);
    //UE_LOG(LogTemp, Warning, TEXT("Moving (%f, %f, %f)"), mMoveDirection.X, mMoveDirection.Y, mMoveDirection.Z);
 
