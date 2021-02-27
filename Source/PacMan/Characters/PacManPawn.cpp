@@ -33,19 +33,28 @@ void APacManPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 void APacManPawn::MoveX(float value)
 {
-   // if value is not 0, then start moving up
-   mMoveXVector = FVector(value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0, 0);
+   // Only calculate Vector if there was a change
+   if( (mXVectorVal == 0.0f && value != 0.0f) || 
+       (mXVectorVal != 0.0f && value == 0.0f) )
+   {
+      mXVectorVal = value * mMoveSpeed * GetWorld()->DeltaTimeSeconds;
+   }
 }
 
 void APacManPawn::MoveY(float value)
 {
-   mMoveYVector = FVector(0, value * mMoveSpeed * GetWorld()->DeltaTimeSeconds, 0);
+   // Only calculate Vector if there was a change
+   if( (mYVectorVal == 0.0f && value != 0.0f) || 
+       (mYVectorVal != 0.0f && value == 0.0f) )
+   {
+      mYVectorVal = value * mMoveSpeed * GetWorld()->DeltaTimeSeconds;
+   }
 }
 
 void APacManPawn::Move()
 {
    // Add all vectors togehter
-   FVector lMovement = mMoveXVector + mMoveYVector;
+   FVector lMovement = FVector(mXVectorVal, mYVectorVal, 0);
    //UE_LOG(LogTemp, Warning, TEXT("Moving (%f, %f, %f)"), mMoveDirection.X, mMoveDirection.Y, mMoveDirection.Z);
 
    AddActorLocalOffset(lMovement, true);
